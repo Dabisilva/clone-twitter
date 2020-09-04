@@ -1,5 +1,6 @@
 import styled, { css } from 'styled-components';
 import { ArrowLeft, Home, Search, Notifications, Email } from '../../styles/icons'
+
 export const Container = styled.div`
   display: flex;
   flex-direction: column;
@@ -62,19 +63,34 @@ export const ProfileInfo = styled.div`
 `;
 
 export const BottomMenu = styled.div`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
 
-`;
+  background: var(--primary); 
+  width: 100%;
+  border-top: 1px solid var(--outline);
+  display: flex;
+  justify-content: space-between;
+
+  padding: 8px min(46px , max(10vw, 10px));
+
+  @media(min-width: 500px){
+    display: none;
+  }
+`;  
 
 const iconsCSS = css`
-  width: 24px;
-  height: 24px;
+  width: 31px;
+  height: 31px;
   fill: var(--gray);
 
   cursor: pointer;
 
   transition: 0.2s;
 
-  &:hover, &:active{
+  &:hover, &.active{
     fill: var(--twitter);
   }
 `;
